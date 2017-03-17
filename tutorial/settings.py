@@ -80,6 +80,7 @@ DATABASES = {
         'NAME': 'skyeye',
         'USER': 'root',
         'PASSWORD': '123456',
+        'HOST': '192.168.72.130',
         'PORT':'3306'
     }
 }
