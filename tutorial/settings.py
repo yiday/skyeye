@@ -25,7 +25,7 @@ SECRET_KEY = 'x%o=97zl6$j)4t9y&bfmx=b5s(w6jsj77u)ewvt27$fctxq@da'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -37,7 +37,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ],
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,8 +88,8 @@ DATABASES = {
         'NAME': 'skyeye',
         'USER': 'root',
         'PASSWORD': '123456',
-        'HOST': '192.168.72.130',
-        'PORT':'3306'
+        'PORT':'3306',
+        'HOST':'127.0.0.1'
     }
 }
 
